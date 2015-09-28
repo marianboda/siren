@@ -1,0 +1,24 @@
+{
+  "name": "siren",
+  "version": "0.0.1",
+  "description": "SirensSound Player",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marianboda/siren.git"
+  },
+  "author": "Marian Boda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marianboda/siren/issues"
+  },
+  "homepage": "https://github.com/marianboda/siren#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "redux": "^3.0.2",
+    "webpack": "^1.12.2"
+  }
+}
