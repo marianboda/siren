@@ -1,3 +1,3 @@
 # siren
 
-Attempt to create universal webapp with Redux
+Attempt to create universal webapp with ES6, React, Redux etc.

@@ -1,8 +1,15 @@
 var express = require('express')
 var app = express()
+var siren = require('./src/services/SirensSound')
+
+console.log(siren)
 
 app.get('/', function (req, res) {
-  res.send('Hello World!')
+  siren(2).then(
+    (posts) => {
+      res.send(JSON.stringify(posts))
+    }
+  )
 })
 
 var server = app.listen(3000, function () {
