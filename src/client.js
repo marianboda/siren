@@ -7,7 +7,4 @@ class Hello extends React.Component {
   }
 }
 
-
-
-
 React.render(<Hello name="Svet"/>, document.getElementById('content'))
