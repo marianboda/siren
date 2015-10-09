@@ -4,7 +4,9 @@
   "description": "SirensSound Player",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js --progress --profile --colors -d",
+    "watch": "webpack --config webpack.config.js --progress --colors --watch -d"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,9 @@
     "cheerio": "^0.19.0",
     "entities": "^1.1.1",
     "express": "^4.13.3",
+    "immutable": "^3.7.5",
     "react": "^0.14.0",
+    "react-dom": "^0.14.0",
     "react-redux": "^3.1.0",
     "redux": "^3.0.2",
     "request": "^2.64.0",
