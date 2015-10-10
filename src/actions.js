@@ -1,3 +1,5 @@
-module.exports = {
-  ADD_POST: {type: 'ADD_POST'}
+export const ADD_POST = 'ADD_POST'
+
+export function addPost(payload) {
+  return { type: ADD_POST, payload }
 }

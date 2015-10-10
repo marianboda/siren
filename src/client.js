@@ -2,7 +2,7 @@
 var React = require('react')
 var ReactDom = require('react-dom')
 
-import Actions from './actions'
+import * as Actions from './actions'
 import store from './store'
 
 class List extends React.Component {
@@ -14,7 +14,9 @@ class List extends React.Component {
     return <ul>{items}</ul>
   }
 }
+
 let unsubscribe
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -25,13 +27,16 @@ class App extends React.Component {
     console.log('componentDidMount')
     unsubscribe = store.subscribe(this.storeChangeHandler)
   }
+  componentWillUnmount() {
+    unsubscribe()
+  }
   storeChangeHandler(event) {
     console.log('change in store')
     this.setState({})
   }
   buttonHandler(event) {
     console.log('clicked')
-    store.dispatch(Actions.ADD_POST)
+    store.dispatch(Actions.addPost())
   }
   render() {
     return <div>

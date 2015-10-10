@@ -1,7 +1,7 @@
 import { createStore } from 'redux'
 import I from 'immutable'
 
-import Actions from './actions'
+import * as Actions from './actions'
 
 var initialState = I.fromJS({
   posts: [
@@ -14,7 +14,7 @@ var initialState = I.fromJS({
 var reducer = function(state = initialState, action) {
   console.log('running reducer')
   switch (action.type) {
-    case Actions.ADD_POST.type:
+    case Actions.ADD_POST:
       let posts = state.get('posts')
       let lastPost = posts.last()
       let newId = lastPost.get('id') + 1
