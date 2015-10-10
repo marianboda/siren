@@ -3,12 +3,10 @@ var app = express()
 var siren = require('./src/services/SirensSound')
 var path = require('path')
 
-console.log(siren)
-
 app.use(require('serve-static')(path.join(__dirname, 'static')))
 
-app.get('/', function (req, res) {
-  siren(2).then(
+app.get('/api/posts', function (req, res) {
+  siren().then(
     (posts) => {
       res.send(JSON.stringify(posts))
     }

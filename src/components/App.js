@@ -39,10 +39,15 @@ export class App extends React.Component {
     console.log('clicked')
     store.dispatch(Actions.addPost())
   }
+  getMore(event) {
+    console.log('get more')
+    store.dispatch(Actions.getPosts())
+  }
   render() {
     return <div>
       <List />
       <button onClick={this.buttonHandler}>ADD</button>
+      <button onClick={this.getMore}>GET MORE</button>
       </div>
   }
 }

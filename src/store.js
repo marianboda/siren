@@ -1,7 +1,8 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import I from 'immutable'
 
 import * as Actions from './actions'
+import {fetcher} from './fetcher'
 
 var initialState = I.fromJS({
   posts: [
@@ -21,11 +22,12 @@ var reducer = function(state = initialState, action) {
       let newState = state.updateIn(['posts'], list => list.push(I.fromJS({id: newId, title: `post ${newId}`})))
       console.log('newState', newState)
       return newState
+    case Actions.GET_POSTS:
     default:
       return state;
   }
 }
 
-let store = createStore(reducer);
+let store = applyMiddleware(fetcher)(createStore)(reducer)
 
 module.exports = store
