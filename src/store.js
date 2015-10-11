@@ -16,13 +16,10 @@ var reducer = function(state = initialState, action) {
   console.log('running reducer')
   switch (action.type) {
     case Actions.ADD_POST:
-      let posts = state.get('posts')
-      let lastPost = posts.last()
-      let newId = lastPost.get('id') + 1
-      let newState = state.updateIn(['posts'], list => list.push(I.fromJS({id: newId, title: `post ${newId}`})))
-      console.log('newState', newState)
-      return newState
-    case Actions.GET_POSTS:
+      let newId = posts.last().get('id') + 1
+      return state.updateIn(['posts'], list => list.push(I.fromJS({id: newId, title: `post ${newId}`})))
+    case Actions.POSTS_RECEIVED:
+      return state.set('posts', I.fromJS(action.payload.posts))
     default:
       return state;
   }

@@ -15,7 +15,7 @@ module.exports = function getPost(page) {
         a = posts.map((i,v) => {
           var post = {}
           post.id = v.attribs.id
-          post.name = entities.decodeHTML($('h2 a',v).html())
+          post.title = entities.decodeHTML($('h2 a',v).html())
           post.link = $('h2 a',v).attr('href')
           post.content = entities.decodeHTML($(v).html())
           return post
