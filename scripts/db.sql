@@ -1,0 +1,1 @@
+CREATE TABLE posts(id INTEGER PRIMARY KEY ASC, title TEXT, content TEXT, date TEXT)
