@@ -45,9 +45,9 @@ export class App extends React.Component {
   }
   render() {
     return <div>
-      <List />
-      <button onClick={this.buttonHandler}>ADD</button>
-      <button onClick={this.getMore}>GET MORE</button>
+        <List />
+        <button onClick={this.buttonHandler}>ADD</button>
+        <button onClick={this.getMore}>GET MORE</button>
       </div>
   }
 }
