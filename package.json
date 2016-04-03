@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js --progress --profile --colors -d",
-    "watch": "webpack --config webpack.config.js --progress --colors --watch -d"
+    "watch": "webpack --config webpack.config.js --progress --colors --watch -d",
+    "resetdb": "sqlite3 db.sqlite < scripts/db.sql"
   },
   "repository": {
     "type": "git",
