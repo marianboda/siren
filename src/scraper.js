@@ -7,7 +7,7 @@ var fetch = function(err, scraperData) {
     return console.log('sheeeeet', err)
 
   let current = scraperData.lastpage + 1
-  Siren.getPost(current + 1).then((data) => {
+  Siren.getPost(current).then((data) => {
     console.log(`Page ${current}, Posts: `, data.length)
     if (data.length < 1) {
       console.log('-- All done --')
